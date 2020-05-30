@@ -8,7 +8,6 @@ import java.util.Date;
 import java.util.TimeZone;
 
 public class Program {
-
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
 		SimpleDateFormat sdf2 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
@@ -23,6 +22,7 @@ public class Program {
 		Date y1 = sdf1.parse("25/06/2018");
 		Date y2 = sdf2.parse("25/06/2018 15:42:07");
 		Date y3 = Date.from(Instant.parse("2018-06-25T15:42:07Z"));
+		
 		System.out.println("------------- Sem formato");
 		System.out.println("x1: " + x1);
 		System.out.println("x2: " + x2);
@@ -31,6 +31,7 @@ public class Program {
 		System.out.println("y1: " + y1);
 		System.out.println("y2: " + y2);
 		System.out.println("y3: " + y3);
+		
 		System.out.println("------------- Formato 02");
 		System.out.println("x1: " + sdf2.format(x1));
 		System.out.println("x2: " + sdf2.format(x2));
@@ -39,6 +40,7 @@ public class Program {
 		System.out.println("y1: " + sdf2.format(y1));
 		System.out.println("y2: " + sdf2.format(y2));
 		System.out.println("y3: " + sdf2.format(y3));
+		
 		System.out.println("------------- Formato 03 - com GMT Brasil");
 		System.out.println("x1: " + sdf3.format(x1));
 		System.out.println("x2: " + sdf3.format(x2));
@@ -59,7 +61,7 @@ public class Program {
 		d = cal.getTime();
 		System.out.println("Horário atual com 4 horas acrescentadas; " + sdf.format(d));
 
-		// Usando o Calendar para obter uma unidade de tempo
+		// Usando o Calendar para obter uma unidade de tempo 
 		
 		SimpleDateFormat sdf0 = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
 		Date dt = Date.from(Instant.parse("2018-06-25T15:42:07Z"));
@@ -87,5 +89,4 @@ public class Program {
 		System.out.println("Data Nascimento: " + sdf1.format(dtnasc));
 		System.out.println("Data Nascimento: " + sdf4.format(dtnasc));
 	}
-
 }
